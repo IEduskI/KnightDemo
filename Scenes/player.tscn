@@ -1,0 +1,146 @@
+[gd_scene load_steps=11 format=3 uid="uid://blvt5kj8nbvkw"]
+
+[ext_resource type="Texture2D" uid="uid://b8yb4js4j3jvd" path="res://v2.1/adventurer-1.3-Sheet.png" id="1_k2wgt"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_tfwoj"]
+
+[sub_resource type="Animation" id="Animation_5xmjc"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.144967, 0.297652, 0.44791),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_jwkb2"]
+resource_name = "Jump"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0673159, 0.13361, 0.198883, 0.267221, 0.336579, 0.405938, 0.478361, 0.548741),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19, 20, 21, 22]
+}
+
+[sub_resource type="Animation" id="Animation_20x63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_oprxs"]
+resource_name = "Walk"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00102138, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_m1cd5"]
+resource_name = "Attack1"
+length = 0.47
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0826366, 0.165273, 0.249952, 0.339739, 0.42038),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45, 46, 47]
+}
+
+[sub_resource type="Animation" id="Animation_hxupp"]
+resource_name = "Slide"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.101021, 0.203064, 0.3, 0.400546),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [150],
+"method": &"SlideMov"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpdsf"]
+_data = {
+"Attack1": SubResource("Animation_m1cd5"),
+"Idle": SubResource("Animation_5xmjc"),
+"Jump": SubResource("Animation_jwkb2"),
+"RESET": SubResource("Animation_20x63"),
+"Slide": SubResource("Animation_hxupp"),
+"Walk": SubResource("Animation_oprxs")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esmrf"]
+radius = 5.66667
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_tfwoj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2wgt")
+hframes = 8
+vframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mpdsf")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_esmrf")
