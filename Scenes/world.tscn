@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://rmretvsbhohp"]
+[gd_scene load_steps=6 format=3 uid="uid://rmretvsbhohp"]
 
 [ext_resource type="Texture2D" uid="uid://gtbh0msd1pr1" path="res://Magic-Cliffs-Gamekit/Environment/PNG/tileset.png" id="1_rnd11"]
 [ext_resource type="PackedScene" uid="uid://blvt5kj8nbvkw" path="res://Scenes/player.tscn" id="2_r3uyt"]
+[ext_resource type="PackedScene" uid="uid://ca2wac73qg8g8" path="res://Scenes/test_enemy.tscn" id="3_nn8ni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_siwb3"]
 texture = ExtResource("1_rnd11")
@@ -693,6 +694,7 @@ texture = ExtResource("1_rnd11")
 5:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:11/0/physics_layer_0/angular_velocity = 0.0
 6:11/0 = 0
+6:11/0/z_index = 1
 6:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:11/0/physics_layer_0/angular_velocity = 0.0
 7:11/0 = 0
@@ -1371,4 +1373,7 @@ layer_0/tile_data = PackedInt32Array(65531, 327680, 12, 65532, 196608, 12, 65533
 position = Vector2(-38, -21)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(2.5, 2.5)
+
+[node name="TestEnemy" parent="." instance=ExtResource("3_nn8ni")]
+position = Vector2(57, -14)
