@@ -13,6 +13,7 @@ var continueAttack = false
 
 @onready var sprite = $Sprite2D
 @onready var animationPlayer=$AnimationPlayer
+@onready var collisionShape = $Area2D/CollisionPolygon2D
 
 var motion = Vector2()
 
@@ -23,10 +24,12 @@ func _physics_process(_delta):
 	if is_on_floor():
 		if Input.is_action_pressed("ui_right") && !blockActions:
 			sprite.flip_h= false
+			collisionShape.scale.x *= -1
 			animationPlayer.play("Walk")
 			velocity.x = min(velocity.x+moveSpeed,maxSpeed)
 		elif Input.is_action_pressed("ui_left") && !blockActions:
 			sprite.flip_h= true
+			collisionShape.scale.x *= -1
 			animationPlayer.play("Walk")
 			velocity.x = max(velocity.x-moveSpeed,-maxSpeed)
 		elif !blockActions:

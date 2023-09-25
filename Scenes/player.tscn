@@ -31,6 +31,62 @@ tracks/1/keys = {
 "values": [PackedVector2Array(), PackedVector2Array(1, 12, 4, 13, 12, 13, 17, 11, 19, 9, 21, 7, 23, 4, 24, 0, 24, -6, 23, -10, 20, -13, 17, -16, 12, -18, 5, -18, 1, -17, -2, -15, -3, -14, 3, -13, 5, -12, 8, -10, 10, -7, 12, -3, 12, 1, 10, 5, 8, 8), PackedVector2Array(17, -16, 14, -18, 9, -19, 4, -18, 1, -17, -2, -15, -4, -12, 0, -11, 5, -12, 7, -14, 12, -14), PackedVector2Array()]
 }
 
+[sub_resource type="Animation" id="Animation_rthen"]
+resource_name = "Attack2"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20019, 0.301307),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [PackedVector2Array(4, -11, 12, -11, 16, -9, 19, -6, 21, -3, 22, 1, 22, 6, 20, 9, 18, 12, 16, 14, 12, 16, 10, 17, -1, 17, -8, 16, -14, 15, -13, 13, -11, 11, -9, 9, -7, 8, -5, 11, 8, 11, 12, 6, 14, 0, 12, -5, 9, -8), PackedVector2Array()]
+}
+
+[sub_resource type="Animation" id="Animation_rj4aa"]
+resource_name = "Attack3"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [53, 54, 55, 56, 57, 58]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20019, 0.353397),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [PackedVector2Array(-5, -6, 1, -4, 4, -3, 9, -3, 13, -1, 19, 2, 24, 3, 25, 7, 23, 10, 20, 12, 15, 13, 12, 15, 10, 15, -13, 15, -18, 13, -23, 11, -19, 8, -14, 7, -10, 10, -4, 10, 1, 12, 5, 11, 10, 9, 14, 8, 17, 6, 14, 2, 10, 1, 2, -2, -4, -4), PackedVector2Array()]
+}
+
 [sub_resource type="Animation" id="Animation_5xmjc"]
 resource_name = "Idle"
 length = 0.5
@@ -136,62 +192,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [8, 9, 10, 11, 12, 13]
-}
-
-[sub_resource type="Animation" id="Animation_rthen"]
-resource_name = "Attack2"
-length = 0.45
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [48, 49, 50, 51, 52]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.20019, 0.301307),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [PackedVector2Array(4, -11, 12, -11, 16, -9, 19, -6, 21, -3, 22, 1, 22, 6, 20, 9, 18, 12, 16, 14, 12, 16, 10, 17, -1, 17, -8, 16, -14, 15, -13, 13, -11, 11, -9, 9, -7, 8, -5, 11, 8, 11, 12, 6, 14, 0, 12, -5, 9, -8), PackedVector2Array()]
-}
-
-[sub_resource type="Animation" id="Animation_rj4aa"]
-resource_name = "Attack3"
-length = 0.55
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [53, 54, 55, 56, 57, 58]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.20019, 0.353397),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [PackedVector2Array(-5, -6, 1, -4, 4, -3, 9, -3, 13, -1, 19, 2, 24, 3, 25, 7, 23, 10, 20, 12, 15, 13, 12, 15, 10, 15, -13, 15, -18, 13, -23, 11, -19, 8, -14, 7, -10, 10, -4, 10, 1, 12, 5, 11, 10, 9, 14, 8, 17, 6, 14, 2, 10, 1, 2, -2, -4, -4), PackedVector2Array()]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mpdsf"]
